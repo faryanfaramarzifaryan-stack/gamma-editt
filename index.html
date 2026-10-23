@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101411">
+  <title>GAMA EDIT | سفارش ادیت اختصاصی</title>
+  <style>
+    :root{--bg:#0b0f0c;--panel:#141b16;--panel2:#1b241d;--green:#72ff91;--muted:#a7b4aa;--line:#29362c;--white:#f4fff6}
+    *{box-sizing:border-box}
+    body{margin:0;background:radial-gradient(ellipse at top,#17271b 0,#0b0f0c 52%);color:var(--white);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+    a{color:inherit}
+    .wrap{width:min(100% - 32px,1000px);margin:auto}
+    header{padding:20px 0;border-bottom:1px solid #263329}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1px;font-size:20px}
+    .logo{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--green);color:#08110a;font-weight:1000;font-size:22px;box-shadow:0 0 25px #72ff912c}
+    .tag{color:var(--muted);font-size:12px}
+    .nav a{font-size:13px;text-decoration:none;color:var(--green)}
+    .hero{padding:56px 0 36px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+    .pill{display:inline-block;border:1px solid #36543d;border-radius:99px;padding:4px 12px;color:var(--green);font-size:12px;background:#142018}
+    h1{font-size:clamp(32px,6vw,56px);line-height:1.25;margin:16px 0}
+    h1 span{color:var(--green)}
+    p{color:var(--muted);margin:8px 0 18px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;padding:11px 18px;border-radius:12px;border:1px solid var(--line);text-decoration:none;font-weight:700;font-size:14px;cursor:pointer}
+    .primary{background:var(--green);color:#071109;border-color:var(--green)}
+    .secondary{background:#151d17;color:var(--white)}
+    .preview{min-height:240px;border:1px solid #344738;border-radius:24px;background:linear-gradient(145deg,#1b2c20,#111713 65%);padding:20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+    .preview:after{content:"G";position:absolute;left:-10px;bottom:-100px;font-size:290px;line-height:1;font-weight:1000;color:#72ff910b}
+    .preview small{color:var(--green);letter-spacing:3px}
+    .preview strong{font-size:30px;line-height:1.4;position:relative;z-index:1}
+    .preview .bars{display:flex;gap:6px;margin-top:15px}
+    .preview .bars i{height:5px;border-radius:9px;background:var(--green);width:35px}
+    section{padding:26px 0}
+    .section-title{font-size:25px;margin:0 0 5px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .card{background:linear-gradient(150deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:18px}
+    .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#203b27;color:var(--green);font-size:21px;margin-bottom:10px}
+    .card h3{margin:0 0 5px;font-size:17px}
+    .card p{font-size:13px;margin:0}
+    .order{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;align-items:start}
+    .note{background:#132017;border:1px solid #2f4d36;padding:18px;border-radius:16px}
+    .note strong{color:var(--green)}
+    form{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}
+    label{display:block;font-size:13px;margin:12px 0 5px;color:#dce8de}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #344337;border-radius:10px;background:#0c120e;color:var(--white);font:inherit;font-size:14px;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--green)}
+    textarea{min-height:95px;resize:vertical}
+    .full{width:100%;margin-top:15px}
+    .small{font-size:12px;color:var(--muted)}
+    .status{display:none;margin-top:12px;padding:12px;border-radius:10px;background:#1d3322;color:#d9ffe0;font-size:13px;overflow-wrap:anywhere}
+    footer{border-top:1px solid var(--line);padding:22px 0;margin-top:30px;font-size:12px;color:var(--muted)}
+    .warning{font-size:12px;color:#e5c88b;margin-top:10px}
+    @media(max-width:700px){.hero,.order{grid-template-columns:1fr}.hero{padding-top:35px}.preview{min-height:190px}.cards{grid-template-columns:1fr}.nav{align-items:flex-start}.brand{font-size:17px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand"><div class="logo">G</div><div>GAMA EDIT<div class="tag">ادیت اختصاصی، مخصوص تو</div></div></div>
+    <a href="#order">ثبت سفارش ↙</a>
+  </div>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="pill">CUSTOM EDITING · سفارش اختصاصی</span>
+      <h1>ایده‌تو بده،<br><span>خاص ادیتش می‌کنیم.</span></h1>
+      <p>برای ساخت ادیت اختصاصی، کاور و ویدیوهای جذاب سفارش ثبت کن. جزئیات پروژه‌ات رو بنویس تا درباره قیمت و زمان تحویل هماهنگ کنیم.</p>
+      <div class="actions">
+        <a class="btn primary" href="#order">شروع سفارش</a>
+        <a class="btn secondary" href="#services">دیدن خدمات</a>
+      </div>
+    </div>
+    <div class="preview" aria-label="پیش‌نمایش گرافیکی سایت">
+      <small>GAMA / CREATIVE STUDIO</small>
+      <strong>YOUR IDEA.<br>OUR EDIT.</strong>
+      <div class="bars"><i></i><i></i><i></i></div>
+    </div>
+  </section>
+  <section id="services">
+    <h2 class="section-title">خدمات ما</h2>
+    <p>نوع ادیتت رو انتخاب کن؛ جزئیات و قیمت نهایی بعد از بررسی مشخص می‌شه.</p>
+    <div class="cards">
+      <article class="card"><div class="icon">▶</div><h3>ادیت ویدیویی</h3><p>ادیت فوتبالی، گیمینگ، کلیپ کوتاه و ویدیوهای شبکه‌های اجتماعی.</p></article>
+      <article class="card"><div class="icon">✦</div><h3>کاور و تامنیل</h3><p>طراحی کاور و تامنیل متناسب با موضوع و سبک کانالت.</p></article>
+      <article class="card"><div class="icon">◈</div><h3>ادیت سفارشی</h3><p>ایده و سبک دلخواهت رو توضیح بده تا سفارش مطابق نیازت بررسی بشه.</p></article>
+    </div>
+  </section>
+  <section id="order">
+    <h2 class="section-title">ثبت سفارش</h2>
+    <p>فرم رو پر کن. بعد از ثبت، متن سفارش آماده می‌شه تا برای فروشنده بفرستی.</p>
+    <div class="order">
+      <div class="note">
+        <strong>چطور سفارش می‌دی؟</strong>
+        <p>۱. نوع ادیت رو انتخاب کن.<br>۲. توضیحات و زمان مدنظرت رو بنویس.<br>۳. متن سفارش رو کپی کن و برای هماهنگی بفرست.</p>
+        <p class="small">این نسخه آزمایشی است؛ اطلاعات فرم به‌صورت خودکار روی سرور ذخیره نمی‌شود.</p>
+      </div>
+      <form id="orderForm">
+        <label for="customer">اسم یا نام کاربری</label>
+        <input id="customer" name="customer" placeholder="مثلاً GamaFan" required>
+        <label for="type">نوع سفارش</label>
+        <select id="type" name="type" required>
+          <option value="ادیت ویدیویی">ادیت ویدیویی</option>
+          <option value="کاور یا تامنیل">کاور یا تامنیل</option>
+          <option value="ادیت فوتبالی">ادیت فوتبالی</option>
+          <option value="ادیت گیمینگ">ادیت گیمینگ</option>
+          <option value="سفارش دیگر">سفارش دیگر</option>
+        </select>
+        <label for="budget">بودجه تقریبی (تومان)</label>
+        <input id="budget" name="budget" inputmode="numeric" placeholder="مثلاً ۲۰۰۰۰۰">
+        <label for="deadline">زمان تحویل مدنظر</label>
+        <select id="deadline" name="deadline">
+          <option>عجله‌ای نیست</option><option>۱ تا ۳ روز</option><option>تا یک هفته</option>
+        </select>
+        <label for="details">توضیحات سفارش</label>
+        <textarea id="details" name="details" placeholder="مثلاً اسم بازیکن، رنگ‌ها، سبک ادیت و لینک فایل‌ها..." required></textarea>
+        <button class="btn primary full" type="submit">آماده‌کردن متن سفارش</button>
+        <div class="status" id="status" role="status"></div>
+        <button class="btn secondary full" id="copyBtn" type="button" style="display:none">کپی متن سفارش</button>
+        <p class="warning">در این نسخه پرداخت آنلاین فعال نیست. برای دریافت پول باید درگاه پرداخت واقعی و بخش امن سمت سرور به سایت وصل شود.</p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© GAMA EDIT — طراحی شده برای سفارش ادیت اختصاصی.</div></footer>
+<script>
+  const form = document.getElementById('orderForm');
+  const statusBox = document.getElementById('status');
+  const copyBtn = document.getElementById('copyBtn');
+  let orderText = '';
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const d = new FormData(form);
+    orderText = `سفارش جدید GAMA EDIT\nنام: ${d.get('customer')}\nنوع سفارش: ${d.get('type')}\nبودجه تقریبی: ${d.get('budget') || 'مشخص نشده'} تومان\nزمان تحویل: ${d.get('deadline')}\nتوضیحات: ${d.get('details')}`;
+    statusBox.textContent = 'متن سفارش آماده شد. آن را کپی کن و برای فروشنده بفرست:\n\n' + orderText;
+    statusBox.style.display = 'block';
+    copyBtn.style.display = 'block';
+  });
+  copyBtn.addEventListener('click', async function() {
+    try {
+      await navigator.clipboard.writeText(orderText);
+      copyBtn.textContent = 'کپی شد ✓';
+    } catch (err) {
+      const area = document.createElement('textarea');
+      area.value = orderText; document.body.appendChild(area); area.select();
+      document.execCommand('copy'); area.remove();
+      copyBtn.textContent = 'کپی شد ✓';
+    }
+  });
+</script>
+</body>
+</html>
